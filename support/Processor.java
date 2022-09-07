@@ -1,13 +1,23 @@
 package support;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Processor {
 
-    // read
-    public static String read() {
+    // Default CTOR
+    public Processor()
+    {
+    }
+
+    // Terminal stream reader method.
+    public static String read()
+    {
         Scanner io = new Scanner( System.in );
         System.out.print("Enter a string to mess up: ");
         return io.nextLine();
@@ -32,12 +42,12 @@ public class Processor {
         char[] c = s.toCharArray();
         int len = c.length;
 
-        //  Fill return-to-be with inverted sample string.
+        //  Fill return-to-be array with inverted arg string s.
         for( int i = 0; i < len; i++ )
         {
             t.add(c[(len-1)-i]);
         }
-        // Continue to fill with sample string from pos 1->end
+        // Continue to fill with arg string s from pos 1->end
         // to not include the "first" letter twice.
         for( int j = 1; j < len; j++)
         {
@@ -53,4 +63,28 @@ public class Processor {
         }
         return r.toString();
     }
+
+    // File write and append sourced: https://stackoverflow.com/questions/9961292/write-to-text-file-without-overwriting-in-java
+    public static void writeToFile( String s ) {
+        out.append(s).append(String.valueOf('\n'));
+    }
+
+    public static void done()
+    {
+        out.close();
+    }
+
+    // Some file-handling members for automatic file logging.
+    // I was practicing this with Java, despite it not being required.
+    protected static File txt = new File( "Results2.txt" );
+    protected static PrintWriter out;
+
+    static {
+        try {
+            out = new PrintWriter( new FileWriter(txt, true));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

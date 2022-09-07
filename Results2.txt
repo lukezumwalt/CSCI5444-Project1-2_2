@@ -1,0 +1,34 @@
+URECBCERU
+USLKAKLSU
+URECBCERU
+ZWUUTSMLLKAA AAKLLMSTUUWZ
+_ZWUUTSMLLKAAAKLLMSTUUWZ_
+YTSOMLICA   ACILMOSTY
+
+Note: the above was recorded automatically, and this text would be overwritten on a new run.
+The following is the terminal log from this test suite:
+
+Enter a string to mess up: Bruce
+ENTRY: Bruce
+CLEANED: BRUCE
+SORTED: BCERU
+PALINDROME: URECBCERU
+Enter a string to mess up: Lukas Zumwalt
+ENTRY: Lukas Zumwalt
+CLEANED: LUKAS ZUMWALT
+SORTED:  AAKLLMSTUUWZ
+PALINDROME: ZWUUTSMLLKAA AAKLLMSTUUWZ
+Enter a string to mess up: Lukas_Zumwalt
+ENTRY: Lukas_Zumwalt
+CLEANED: LUKAS_ZUMWALT
+SORTED: AAKLLMSTUUWZ_
+PALINDROME: _ZWUUTSMLLKAAAKLLMSTUUWZ_
+Enter a string to mess up: My Cat Silo
+ENTRY: My Cat Silo
+CLEANED: MY CAT SILO
+SORTED:   ACILMOSTY
+PALINDROME: YTSOMLICA   ACILMOSTY
+Enter a string to mess up:
+Terminating...
+
+Process finished with exit code 0
